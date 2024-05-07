@@ -1,6 +1,16 @@
 #Python environment
 /dbt-env
 
+#deps.. if error run "dbt deps"
+dbt_packages/
+
 
 #Logs folder
 /logs
+
+#builds
+target/
+dbt_modules/
+logs/
+
+.user.yml
