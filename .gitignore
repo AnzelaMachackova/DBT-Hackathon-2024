@@ -17,4 +17,3 @@ logs/
 
 #Include static docs
 !*/static_index.html
-!*/.htaccess
