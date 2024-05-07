@@ -9,8 +9,11 @@
 /logs
 
 #builds
-target/
+target/*
 dbt_modules/
 logs/
 
 .user.yml
+
+#Include static docs
+!*/static_index.html
