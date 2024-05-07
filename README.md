@@ -2,6 +2,14 @@ Welcome to your new dbt project!
 
 ### Using the starter project
 
+To use this project you must:
+- create Python venv and activate it
+- pip install -r requirements.txt
+- dbt deps
+- dbt debug
+- dbt run
+- dbt docs generate --static
+
 Try running the following commands:
 - dbt run
 - dbt test
