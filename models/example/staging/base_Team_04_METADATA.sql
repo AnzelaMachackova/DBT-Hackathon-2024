@@ -10,9 +10,9 @@ with source as (
 
 renamed as (
     select
-        {{ adapter.quote("DATABASE") }},
-        {{ adapter.quote("SCHEMA") }},
-        {{ adapter.quote("TABLES") }},
+        {{ adapter.quote("DATABASE_NAME") }},
+        {{ adapter.quote("SCHEMA_NAME") }},
+        {{ adapter.quote("TABLE_NAME") }},
         {{ adapter.quote("COLUMN_NAME") }},
         {{ adapter.quote("TEST_TYPE") }},
         {{ adapter.quote("TEST_NAME") }},
