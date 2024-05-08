@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: HACKATHON
+    schema: DATA_SAMPLE
+    description: This is a replica of the Snowflake database used by our app
+    tables:
+      - name: PIZZA_ORDERS

@@ -1,5 +1,5 @@
 send_anonymous_usage_stats: false
-Hackathon:
+HACKATHON:
     target: Snowflake_DB
     outputs:
         Snowflake_DB:
