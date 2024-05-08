@@ -14,4 +14,4 @@ contract as (
 select
     count(*) as failures
 from model
-where {{column_name}} is null
+where {{column_name}} is nulld

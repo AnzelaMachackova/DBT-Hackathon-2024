@@ -12,3 +12,6 @@ models:
         - supertest:
             contract: ref('base_Team_04_TEMP_TEST')
 
+  - name: BASE_TEAM_04_METADATA
+    description: Base model for pizza customers
+
