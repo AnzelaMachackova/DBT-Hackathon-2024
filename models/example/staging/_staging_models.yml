@@ -9,6 +9,6 @@ models:
   - name: base_Hackathon_PIZZA_ORDER_ITEMS
     description: Base model for pizza customers
     tests:
-        - supertest
-            
+        - supertest:
+            contract: ref('base_Team_04_TEMP_TEST')
 
