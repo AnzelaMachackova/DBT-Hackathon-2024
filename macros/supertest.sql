@@ -1,5 +1,5 @@
 {% macro supertest(model, contract) %}
-    {% set model = ref(model) %}
+    {% set model = model %}
     {% set ref_table = contract %}
 
     {% set query %}
@@ -25,6 +25,7 @@
                     {{ log('Validation result: ' ~ validation_result, info=true) }}
                     
                     {% set logging_query = logging(table_name = model, column_name=column_name, test_name=test_name, result=result, validation=validation_result) %}
+                    {{ log("Login validation: " ~ logging_query, info=True) }}
                     {% set validation_query_result = run_query(logging_query) %}
                     {% set result = query_result.rows %}
                     {{ log("SQL validation: " ~ result, info=True) }}
