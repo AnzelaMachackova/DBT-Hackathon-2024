@@ -1,5 +1,5 @@
 send_anonymous_usage_stats: false
-HACKATHON:
+Hackathon:
     target: Snowflake_DB
     outputs:
         Snowflake_DB:
@@ -7,7 +7,7 @@ HACKATHON:
             account: "JXGPFAR-REVOLT_PARTNER"
             user: "USER_04"
             password: "Dataisthekey04!_"
-            database: "jdbc:snowflake://JXGPFAR-REVOLT_PARTNER.snowflakecomputing.com:443/?account=JXGPFAR-REVOLT_PARTNER&warehouse=HACKATHON_WH&db=HACKATHON&schema=PUBLIC&ssl=on "
+            database: "HACKATHON"
             warehouse: "HACKATHON_WH"
             schema: "TEAM_04"
             
