@@ -1,5 +1,5 @@
 {% macro supertest(model, contract) %}
-    {% set model = model %}
+    {% set model = ref(model) %}
     {% set ref_table = contract %}
 
     {% set query %}
@@ -17,16 +17,23 @@
                 {% if test_name == 'not_null' %}
                     {% set null_test_sql = not_null_test(model=model, column_name=column_name) %}
                     {{ log("Generated SQL for NOT_NULL test: " ~ null_test_sql, info=True) }}
+                    
                     {% set query_result = run_query(null_test_sql) %}
-                    {% set result = query_result.rows[0] %}
-                    {{ log("SQL result for NOT_NULL test: " ~ result[0], info=True) }}
-                    {% set validation_result_query = validate_values(result=result[0], expected_value=expected_value) %}
-                    {{ log('Validation result: ' ~ validation_result_query, info=true) }}
-                    {% set logging_query = logging(table_name = model, column_name=column_name, test_name=test_name, result=result, validation=validation_result) %}
+                    
+                    {%- if execute -%}
+                    {%- set row_result = query_result.columns[0].values()[0] -%}
+                        {%- endif -%}
+                    
+                    {{ log("SQL result for NOT_NULL test: " ~ row_result, info=True) }}
+                    {{ log("expected value is: " ~ expected_value, info=True) }}
+                    {% set validation_result = validate_values(result=row_result, expected_value=expected_value) %}
+                    {{ log('Validation result: ' ~ validation_result, info=true) }}
+                    
+                    {% set logging_query = logging(table_name = model, column_name=column_name, test_name=test_name, result=row_result, validation=validation_result) %}
+                    
                     {{ log("Login validation: " ~ logging_query, info=True) }}
                     {% set validation_query_result = run_query(logging_query) %}
                     {% set result = query_result.rows %}
-                    {{ log("SQL validation: " ~ result, info=True) }}
 
                 {% elif test_name == 'unique' %}
                     {% set unique_test_sql = unique_test(model=model, column_name=column_name) %}

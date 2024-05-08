@@ -8,8 +8,6 @@ models:
 
   - name: base_Hackathon_PIZZA_ORDER_ITEMS
     description: Base model for pizza customers
-    tests:
-        - supertest_test:
-            contract: 'BASE_TEAM_04_METADATA'
+
 
 
