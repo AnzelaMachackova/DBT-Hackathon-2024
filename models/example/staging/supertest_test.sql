@@ -1,7 +1,7 @@
 
 
 with model as ( 
-    select * from {{ ref('base_Hackathon_PIZZA_ORDER_ITEMS') }}
+    select * from {{ ref('BASE_HACKATHON_PIZZA_ORDER_ITEMS') }}
 ),
 
 contract as (
