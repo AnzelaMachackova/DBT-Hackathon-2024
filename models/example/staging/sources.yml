@@ -10,3 +10,8 @@ sources:
       - name: PIZZA_CUSTOMERS
       - name: PIZZA_ORDER_ITEM_TOPPINGS
       - name: PIZZA_MARKETING_EXPENDITURES
+
+  - name: Team_04
+    schema: TEAM_04
+    tables:
+      - name: TEMP_TEST

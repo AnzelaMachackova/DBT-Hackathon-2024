@@ -11,3 +11,15 @@ Hackathon:
             warehouse: "HACKATHON_WH"
             schema: "TEAM_04"
             
+
+Team_04:
+    target: Snowflake_DB
+    outputs:
+        Snowflake_DB:
+            type: snowflake
+            account: "JXGPFAR-REVOLT_PARTNER"
+            user: "USER_04"
+            password: "Dataisthekey04!_"
+            database: "HACKATHON"
+            warehouse: "HACKATHON_WH"
+            schema: "TEAM_04"
